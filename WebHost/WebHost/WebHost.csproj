@@ -62,6 +62,8 @@
   <ItemGroup>
     <Compile Include="Application\UserService.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Infrastructure\CliRunner.cs" />
+    <Compile Include="Infrastructure\MainHost.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
