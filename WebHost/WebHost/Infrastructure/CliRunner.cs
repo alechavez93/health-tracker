@@ -50,7 +50,7 @@ namespace WebHost.Infrastructure
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occurred at Application Host: "+ ex);
+                Console.WriteLine($"Error occurred at Application Host: {ex}");
                 EventLog.WriteEntry(typeof(CliRunner).Assembly.GetName().Name, ex.ToString(), EventLogEntryType.Error);
             }
             finally

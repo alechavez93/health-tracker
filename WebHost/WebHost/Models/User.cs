@@ -3,7 +3,6 @@ using System.Runtime.Serialization;
 
 namespace WebHost.Models
 {
-    [DataContract(Name = "user")]
     [Serializable]
     public class User
     {

@@ -6,21 +6,24 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using WebHost.Application;
 using WebHost.Models;
+using Unity;
 
 namespace WebHost.Controllers
 {
     /// <summary>
     /// The API controller providing user related service endpoints
     /// </summary>
-    [RoutePrefix("webhost/v1/users")]
+    [RoutePrefix("health-tracker/v1/users")]
     public class UserController : ApiController
     {
         private readonly IUserService appService;
 
-        public UserController(IUserService appService)
+        public UserController()
             : base()
         {
-            this.appService = appService;
+            var container = (IUnityContainer)AppDomain.CurrentDomain.GetData("unityContainer");
+            this.appService = container.Resolve<IUserService>();
+            var next = "next";
         }
 
         [HttpGet]
